@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Freelancer! - Calcule aqui aa</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="container-title"> Calculadora Freelancer </h2>
+
+        <label for="valor-desejo"> Quanto você deseja ganhar? </label>
+        <input type="number" id="valor-desejo" class="valor" name="valor-desejo"><br>
+
+        <label for="horas"> Quantas horas trabalha por dia? </label>
+        <input type="number" id="horas" name="horas"><br>
+
+        <label for="dias"> Quantos dias trabalha por semana? </label>
+        <input type="number" id="dias" name="dias"><br>
+
+        <label> Possui algum gasto adicional? </label>
+        <input type="radio" name="sn" id="sim" value="sim"><label for="sim"> Sim </label>
+        <input type="radio" name="sn" id="nao" value="nao"><label for="nao"> Não </label><br>
+
+        <label for="gasto-add">Se sim, quanto? Se não, digite 0.</label>
+        <input type="number" name="gasto-add" id="gasto-add">
+
+        <input type="button" value="Calcular" onclick="calcular()">
+
+        <p class="resultado"></p>
+    </div>
+
+    <script>
+
+        function calcular(){
+            valor = document.querySelector('input.valor')
+            valor_n = Number(valor.value)
+
+            valor = document.querySelector('input.valor')
+            valor_n = Number(valor.value)
+
+            horas = document.getElementById('horas')
+            horas_n = Number(horas.value)
+
+            dias = document.getElementById('dias')
+            dias_n = Number(dias.value)
+
+            gasto = document.getElementById('gasto-add')
+            gasto_n = Number(gasto.value)
+
+            salario_ideal = gasto_n + valor_n
+            tempo = (horas_n * dias_n) * 4
+            res = salario_ideal/tempo
+
+            res_view = document.querySelector('.resultado')
+            res_view.innerHTML = res
+        }
+    </script>
+</body>
+</html>
